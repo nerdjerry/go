@@ -3,10 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	//var card string = "Aces of Spades"
-	card := getCard()
+	//Create a slice of string
+	cards := []string{"Ace of Diamonds", getCard()}
+	//Add value to slice and expand its capacity
+	cards = append(cards, "6 of Club")
 
-	fmt.Println(card)
+	fmt.Println(cards)
 }
 
 func getCard() string {
