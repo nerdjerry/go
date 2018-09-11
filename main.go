@@ -8,7 +8,9 @@ func main() {
 	//Add value to slice and expand its capacity
 	cards = append(cards, "6 of Club")
 
-	fmt.Println(cards)
+	for i, value := range cards {
+		fmt.Println(i, value)
+	}
 }
 
 func getCard() string {
