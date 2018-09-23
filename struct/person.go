@@ -25,9 +25,13 @@ func main() {
 			zipcode: 12344,
 		},
 	}
+	prateek.updateName("Nerd")
 	prateek.print()
 }
 
+func (p *person) updateName(updatedName string) {
+	(*p).firstName = updatedName
+}
 func (p person) print() {
 	fmt.Printf("%+v", p)
 }
