@@ -4,29 +4,34 @@ import (
 	"fmt"
 )
 
+type bot interface {
+	getGreeting() string
+}
+
 type englishBot struct{}
 
 type spanishBot struct{}
 
 func main() {
 	eb := englishBot{}
-	//sb := spanishBot{}
-	getGreeting(eb)
+	sb := spanishBot{}
+	greeting(eb)
+	greeting(sb)
 }
 
-func getGreeting(eb englishBot) {
-	fmt.Println(eb.greeting())
+func greeting(b bot) {
+	fmt.Println(b.getGreeting())
 }
 
 //Same logic as english bot, just argument type different
 //func getGreeting(sb spanishBot) {
 //	fmt.Println(sb.greeting())
 //}
-func (englishBot) greeting() string {
+func (englishBot) getGreeting() string {
 	//Custom logic only for english
 	return "Hi, There!"
 }
 
-func (spanishBot) greeting() string {
+func (spanishBot) getGreeting() string {
 	return "Hola!"
 }
